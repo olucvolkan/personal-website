@@ -1,0 +1,10 @@
+name = "my-v0-project"
+compatibility_date = "2024-03-20"
+
+[build]
+command = "npm run pages:build"
+cwd = "."
+dist = ".next"
+
+[site]
+bucket = ".next" 
