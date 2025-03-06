@@ -4,7 +4,10 @@ compatibility_date = "2024-03-20"
 [build]
 command = "npm run pages:build"
 cwd = "."
-dist = ".next"
+dist = "out"
 
 [site]
-bucket = ".next" 
+bucket = "out"
+
+[build.environment]
+NODE_VERSION = "20" 

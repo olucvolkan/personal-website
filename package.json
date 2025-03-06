@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "pages:build": "next build",
-    "pages:deploy": "npx wrangler pages deploy .next"
+    "pages:deploy": "npx wrangler pages deploy out"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
