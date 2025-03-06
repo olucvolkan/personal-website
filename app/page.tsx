@@ -8,24 +8,24 @@ export default function PersonalWebsite() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-blue-600 to-cyan-500 text-white">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=1920')] opacity-10 bg-cover bg-center"></div>
-        <div className="container mx-auto px-4 py-16 relative">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-xl flex-shrink-0">
+      <div className="bg-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+            <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-gray-100 shadow-lg">
               <Image
-                src="/placeholder.svg?height=400&width=400"
+                src="/profile.jpg"
                 alt="Profile photo"
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 192px, 256px"
               />
             </div>
-
+            
             <div className="text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold mb-2">Volkan Oluc</h1>
-              <h2 className="text-xl md:text-2xl font-light mb-4">Senior Software Engineer & Digital Nomad</h2>
-              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-100">
+              <h1 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900">Volkan Oluc</h1>
+              <h2 className="text-xl font-light mb-4 text-gray-600">Senior Software Engineer & Digital Nomad</h2>
+              <div className="flex items-center justify-center md:justify-start gap-2 text-gray-500">
                 <MapPin className="h-5 w-5" />
                 <span>Currently in {getCurrentLocation()}</span>
               </div>
@@ -37,59 +37,73 @@ export default function PersonalWebsite() {
       {/* Social Media Bar */}
       <div className="bg-white shadow-md py-4 sticky top-0 z-10">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link href="https://github.com/olucvolkan" target="_blank" aria-label="GitHub">
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-full bg-white hover:bg-gray-900 text-gray-900 hover:text-white border-2 border-gray-200 hover:border-gray-900 flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105"
-              >
-                <Github className="h-5 w-5" />
-                <span className="font-medium">GitHub</span>
-              </Button>
+          <div className="flex flex-col items-center gap-4">
+            <Link
+              href="https://youtube.com/@volkanoluc"
+              className="flex items-center gap-2 text-lg text-gray-900 hover:text-red-600 transition-colors mb-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Subscribe to my YouTube Channel{' '}
+              <span className="font-semibold text-red-600">@volkanoluc</span>
+              <svg className="h-6 w-6 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
             </Link>
-            <Link href="https://x.com/olucvolkan" target="_blank" aria-label="X">
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-full bg-white hover:bg-black text-black hover:text-white border-2 border-gray-200 hover:border-black flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105"
-              >
-                <Twitter className="h-5 w-5" />
-                <span className="font-medium">X</span>
-              </Button>
-            </Link>
-            <Link href="https://youtube.com/@volkanoluc" target="_blank" aria-label="YouTube">
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-full bg-white hover:bg-[#FF0000] text-[#FF0000] hover:text-white border-2 border-[#FF0000] hover:border-[#FF0000] flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-red-200"
-              >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-                <span className="font-medium">YouTube</span>
-              </Button>
-            </Link>
-            <Link href="https://www.linkedin.com/in/volkan-oluc/" target="_blank" aria-label="LinkedIn">
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-full bg-white hover:bg-[#0077B5] text-[#0077B5] hover:text-white border-2 border-[#0077B5] hover:border-[#0077B5] flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105"
-              >
-                <Linkedin className="h-5 w-5" />
-                <span className="font-medium">LinkedIn</span>
-              </Button>
-            </Link>
-            <Link href="https://www.instagram.com/volkanoluc/" target="_blank" aria-label="Instagram">
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-full bg-white hover:bg-gradient-to-r hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737] text-[#E1306C] hover:text-white border-2 border-[#E1306C] hover:border-transparent flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105"
-              >
-                <Instagram className="h-5 w-5" />
-                <span className="font-medium">Instagram</span>
-              </Button>
-            </Link>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="https://github.com/olucvolkan" target="_blank" aria-label="GitHub">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full bg-white hover:bg-gray-900 text-gray-900 hover:text-white border-2 border-gray-200 hover:border-gray-900 flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105"
+                >
+                  <Github className="h-5 w-5" />
+                  <span className="font-medium">GitHub</span>
+                </Button>
+              </Link>
+              <Link href="https://x.com/olucvolkan" target="_blank" aria-label="X">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full bg-white hover:bg-black text-black hover:text-white border-2 border-gray-200 hover:border-black flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105"
+                >
+                  <Twitter className="h-5 w-5" />
+                  <span className="font-medium">X</span>
+                </Button>
+              </Link>
+              <Link href="https://www.linkedin.com/in/volkan-oluc/" target="_blank" aria-label="LinkedIn">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full bg-white hover:bg-[#0077B5] text-[#0077B5] hover:text-white border-2 border-[#0077B5] hover:border-[#0077B5] flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105"
+                >
+                  <Linkedin className="h-5 w-5" />
+                  <span className="font-medium">LinkedIn</span>
+                </Button>
+              </Link>
+              <Link href="https://www.instagram.com/volkanoluc/" target="_blank" aria-label="Instagram">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full bg-white hover:bg-gradient-to-r hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737] text-[#E1306C] hover:text-white border-2 border-[#E1306C] hover:border-transparent flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105"
+                >
+                  <Instagram className="h-5 w-5" />
+                  <span className="font-medium">Instagram</span>
+                </Button>
+              </Link>
+              <Link href="https://medium.com/@volkanoluc" target="_blank" aria-label="Medium">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full bg-white hover:bg-black text-black hover:text-white border-2 border-gray-200 hover:border-black flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105"
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                  </svg>
+                  <span className="font-medium">Medium</span>
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -266,17 +280,6 @@ export default function PersonalWebsite() {
       </div>
 
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <Link
-            href="https://youtube.com/@volkanoluc"
-            className="flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Subscribe to my YouTube Channel{' '}
-            <span className="text-red-600">@volkanoluc</span>
-          </Link>
-        </div>
       </div>
     </div>
   )
